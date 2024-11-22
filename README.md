@@ -16,7 +16,7 @@ This sample app allows you to get familiar with Native Flows using Descope Swift
 
 ![Alt text](Images/setProjectId.png?raw=true "Set Project ID")
 
-5. Run the simulator within Xcode - The play button located in the top left
+4. Run the simulator within Xcode - The play button located in the top left
 
 #### Running Flows
 
