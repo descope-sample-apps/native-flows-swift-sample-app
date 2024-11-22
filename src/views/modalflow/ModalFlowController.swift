@@ -47,7 +47,7 @@ class ModalFlowController: UIViewController {
     // Flow
 
     func startFlow() {
-        let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in-otp")!
+        let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")!
         let flow = DescopeFlow(url: url)
         flowViewController.delegate = self
         flowViewController.start(flow: flow)
