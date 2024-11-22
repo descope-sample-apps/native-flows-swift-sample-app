@@ -1,12 +1,12 @@
-## Swift Sample App
+## Deslope ~ Native Flows Swift Sample App
 
-iOS Sample app using Descope for authentication. this app includes
+iOS Sample app using Descope for authentication. This app includes
 
 - Swift App client
 
 ## Getting Started
 
-This sample app allows you to get familiar with the Descope Swift SDK. It has all of the supported authentication functions built into it for you to test with.
+This sample app allows you to get familiar with Native Flows using Descope Swift SDK. For an example with all authentication methods, refer to the [Swift Sample App](https://github.com/descope-sample-apps/swift-sample-app).
 
 ### Run the app
 
@@ -16,7 +16,6 @@ This sample app allows you to get familiar with the Descope Swift SDK. It has al
 
 ![Alt text](Images/setProjectId.png?raw=true "Set Project ID")
 
-4. Optionally, if you are using a custom CNAME, you can also change the myBaseURL
 5. Run the simulator within Xcode - The play button located in the top left
 
 #### Running Flows
