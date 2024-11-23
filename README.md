@@ -1,3 +1,5 @@
+<img width="1049" alt="image" src="https://github.com/user-attachments/assets/4f8e5575-d7c6-4bdb-8f64-66b9be0c0874">
+
 # Descope's Native Flows Swift Sample App
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -26,11 +28,13 @@ Make sure you have the following installed:
 
 ![Alt text](Images/setProjectId.png?raw=true "Set Project ID")
 
-4. **(Optional) Self-Host Your Flow**: Your Descope authentication flow is automatically hosted by Descope at [https://auth.descope.io/<your_descope_project_id>](https://auth.descope.com/<your_descope_project_id>) but you can use your own domain as host. You can modify the value for the flow Url in the Flow Controller files to include your own hosted page with our Descope Web Component, as well as alter the `?flow=sign-up-or-in` parameter to run a different flow.
+4. **(Optional) Self-Host Your Flow**: Your Descope authentication flow is automatically hosted by Descope at [https://auth.descope.io/<your_descope_project_id>](https://auth.descope.com/<your_descope_project_id>) but you can use your own website or domain to host your flow. You can modify the value for the flow Url in the Flow Controller files to include your own hosted page with our Descope Web Component, as well as alter the `?flow=sign-up-or-in` parameter to run a different flow.
 
 ```
 let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 ```
+
+> For more information about Auth Hosting, visit our docs on it [here](https://docs.descope.com/auth-hosting-app)
 
 5. Run the simulator within Xcode - The play button located in the top left
 
