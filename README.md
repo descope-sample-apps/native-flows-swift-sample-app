@@ -23,7 +23,7 @@ This sample app allows you to get familiar with Native Flows using Descope Swift
 If you're running a hosted flow with this SDK, you can modify the value for the flow Url in the Flow Controller files to include your own hosted page with our Descope Web Component, as well as alter the `?flow=sign-up-or-in` parameter to run a different flow.
 
 ```
-    let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 ```
 
 ### Notes:
