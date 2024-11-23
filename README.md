@@ -1,3 +1,5 @@
+<img width="1049" alt="image" src="https://github.com/user-attachments/assets/4f8e5575-d7c6-4bdb-8f64-66b9be0c0874">
+
 # Descope's Native Flows Swift Sample App
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
