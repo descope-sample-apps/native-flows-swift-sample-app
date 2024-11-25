@@ -1,4 +1,3 @@
-
 import UIKit
 import DescopeKit
 
@@ -87,7 +86,7 @@ class InlineFlowController: UIViewController {
     }
 
     func showHome() {
-        AppInterface.transitionToHomeScreen(in: view.window)
+        AppInterface.transitionToHomeScreen(from: self)
     }
 
     // Animations
