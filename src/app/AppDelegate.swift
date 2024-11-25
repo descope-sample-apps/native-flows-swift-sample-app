@@ -1,4 +1,3 @@
-
 import UIKit
 import DescopeKit
 
@@ -8,19 +7,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // initialize the Descope SDK before using it
-        
         let localProjectId = Bundle.main.infoDictionary!["myProjectId"] as! String
         let localBaseURL = Bundle.main.infoDictionary!["myBaseURL"] as! String
         Descope.config = DescopeConfig(projectId: localProjectId, baseURL: localBaseURL)
         
-        Descope.setup(projectId: localProjectId)
+        Descope.setup(projectId: localProjectId) {
+            $0.logger = DescopeLogger()
+        }
 
         // show home screen if user is already logged in, otherwise show authentication screen
         let initialViewController: UIViewController
         if let session = Descope.sessionManager.session, !session.refreshToken.isExpired {
-            initialViewController = AppInterface.homeScreen
+            initialViewController = AppInterface.createHomeScreen()
         } else {
-            initialViewController = AppInterface.authScreen
+            initialViewController = AppInterface.createAuthScreen()
         }
 
         window = UIWindow(frame: UIScreen.main.bounds)

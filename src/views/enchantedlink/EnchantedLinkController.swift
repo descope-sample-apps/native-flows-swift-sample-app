@@ -87,7 +87,7 @@ class EnchantedLinkController: UIViewController {
     }
 
     func showHome() {
-        AppInterface.transitionToHomeScreen(in: view.window)
+        AppInterface.transitionToHomeScreen(from: view.window!.rootViewController!)
     }
 
     // Animations

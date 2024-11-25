@@ -3,9 +3,9 @@ import UIKit
 
 /// Which authentication screen to show when the app runs
 @MainActor
-var appInterface: AppInterface = .inlineFlow
+var appInterface = AppInterface.inlineFlow
 
-/// Which kind of authentication UI the app should show
+/// The kinds of authentication screens supported by the app
 @MainActor
 enum AppInterface {
     /// Display a native authentication view for doing enchanted link with email
@@ -21,7 +21,7 @@ enum AppInterface {
     /// already fully ready
     case modalFlow
 
-    /// A more compex example of authentication with flows that creates a
+    /// A more complex example of authentication with flows that creates a
     /// DescopeFlowView instead of a controller, embeds the view into
     /// the view hierarchy, and shows it with a custom animation
     case inlineFlow
@@ -29,7 +29,7 @@ enum AppInterface {
 
 /// Convenience functions for creating view controllers
 extension AppInterface {
-    static var authScreen: UIViewController {
+    static func createAuthScreen() -> UIViewController {
         let vc: UIViewController
         switch appInterface {
         case .enchantedLink: vc = EnchantedLinkController()
@@ -40,7 +40,7 @@ extension AppInterface {
         return UINavigationController(rootViewController: vc)
     }
 
-    static var homeScreen: UIViewController {
+    static func createHomeScreen() -> UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithDefaultBackground()
 
@@ -53,19 +53,27 @@ extension AppInterface {
 
 /// Convenience functions for transitioning between screens
 extension AppInterface {
-    static func transitionToAuthScreen(in window: UIWindow?) {
-        transition(window: window, to: authScreen)
+    static func transitionToAuthScreen(from: UIViewController) {
+        transition(from: from, to: createAuthScreen())
     }
 
-    static func transitionToHomeScreen(in window: UIWindow?) {
-        transition(window: window, to: homeScreen)
+    static func transitionToHomeScreen(from: UIViewController) {
+        transition(from: from, to: createHomeScreen())
     }
 
-    private static func transition(window: UIWindow?, to viewController: UIViewController) {
-        guard let window else { return }
+    private static func transition(from: UIViewController, to: UIViewController) {
+        // transition from the window of the calling view controller
+        let viewControllerWindow = from.viewIfLoaded?.window
+
+        // alternatively, transition from the window of the navigation controller if the calling
+        // view controller's is not currently visible
+        let navigationControllerWindow = from.navigationController?.viewIfLoaded?.window
+
+        // we must have a window to perform the transition on
+        guard let window = viewControllerWindow ?? navigationControllerWindow else { preconditionFailure("Attempt to transition without a window") }
+
         UIView.transition(with: window, duration: 1, options: .transitionFlipFromRight) {
-            window.rootViewController = viewController
+            window.rootViewController = to
         }
     }
 }
-
