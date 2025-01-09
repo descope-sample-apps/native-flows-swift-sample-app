@@ -26,12 +26,12 @@ Make sure you have the following installed:
 2. Open the project within Xcode
 3. Within the project settings of the project, change the `myProjectId` (If in a non-US region, or using a custom domain with CNAME, replace `myBaseURL` with your specific localized base URL)
 
-![Alt text](Images/setProjectId.png?raw=true "Set Project ID")
+![Alt text](.github/images/setProjectId.png?raw=true "Set Project ID")
 
-4. **(Optional) Self-Host Your Flow**: Your Descope authentication flow is automatically hosted by Descope at `https://auth.descope.io/<your_descope_project_id>` but you can use your own website or domain to host your flow. You can modify the value for the flow Url in the Flow Controller files to include your own hosted page with our Descope Web Component, as well as alter the `?flow=sign-up-or-in` parameter to run a different flow.
+4. **(Optional) Self-Host Your Flow**: Your Descope authentication flow is automatically hosted by Descope at `https://auth.descope.io/<your_descope_project_id>` but you can use your own website or domain to host your flow. You can modify the value for the flow URL in the Flow Controller files to include your own hosted page with our Descope Web Component, as well as alter the `?flow=sign-up-or-in` parameter to run a different flow.
 
-```
-let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+```swift
+let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 ```
 
 > For more information about Auth Hosting, visit our docs on it [here](https://docs.descope.com/auth-hosting-app)

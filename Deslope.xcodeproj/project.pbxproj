@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0A90C32D2FC58200AE854B /* DescopeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B0A90C22D2FC58200AE854B /* DescopeKit */; };
 		2B4347CE2BDA6F9800F670B2 /* EnchantedLinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4347CC2BDA6F9800F670B2 /* EnchantedLinkController.swift */; };
 		2B4347CF2BDA6F9800F670B2 /* EnchantedLinkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4347CD2BDA6F9800F670B2 /* EnchantedLinkController.xib */; };
 		2B4347D42BDA9FB000F670B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4347D22BDA9FB000F670B2 /* HomeViewController.swift */; };
@@ -14,17 +15,13 @@
 		2BA668842BDA62E9000D7F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA668832BDA62E9000D7F9D /* AppDelegate.swift */; };
 		2BA6688D2BDA62EA000D7F9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA6688C2BDA62EA000D7F9D /* Assets.xcassets */; };
 		2BA668902BDA62EA000D7F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA6688E2BDA62EA000D7F9D /* LaunchScreen.storyboard */; };
-		2BE995262C5B9F0D008228C0 /* DescopeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BE995252C5B9F0D008228C0 /* DescopeKit */; };
 		2BE9952A2C5B9FB3008228C0 /* InlineFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE995282C5B9FB3008228C0 /* InlineFlowController.swift */; };
 		2BE9952B2C5B9FB3008228C0 /* InlineFlowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE995292C5B9FB3008228C0 /* InlineFlowController.xib */; };
-		2BEB4AA02CEB7F87004AA068 /* DescopeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BEB4A9F2CEB7F87004AA068 /* DescopeKit */; };
 		2BEB4AAB2CEB9D8E004AA068 /* AppInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB4AAA2CEB9D8C004AA068 /* AppInterface.swift */; };
-		2BEB4AAE2CECA2A8004AA068 /* DescopeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BEB4AAD2CECA2A8004AA068 /* DescopeKit */; };
 		2BEB4AB22CECB4E0004AA068 /* ModalFlowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BEB4AB12CECB4E0004AA068 /* ModalFlowController.xib */; };
 		2BEB4AB32CECB4E0004AA068 /* ModalFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB4AB02CECB4E0004AA068 /* ModalFlowController.swift */; };
 		2BEB4AB72CECC1A5004AA068 /* SimpleFlowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BEB4AB62CECC1A5004AA068 /* SimpleFlowController.xib */; };
 		2BEB4AB82CECC1A5004AA068 /* SimpleFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB4AB52CECC1A5004AA068 /* SimpleFlowController.swift */; };
-		922D7BC42CF13B3A009EFB52 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922D7BC12CF13B3A009EFB52 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,17 +42,14 @@
 		2BEB4AB12CECB4E0004AA068 /* ModalFlowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalFlowController.xib; sourceTree = "<group>"; };
 		2BEB4AB52CECC1A5004AA068 /* SimpleFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFlowController.swift; sourceTree = "<group>"; };
 		2BEB4AB62CECC1A5004AA068 /* SimpleFlowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleFlowController.xib; sourceTree = "<group>"; };
-		922D7BC12CF13B3A009EFB52 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2BA6687D2BDA62E9000D7F9D /* Frameworks */ = {
+		2B0A90C02D2FC57400AE854B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BE995262C5B9F0D008228C0 /* DescopeKit in Frameworks */,
-				2BEB4AAE2CECA2A8004AA068 /* DescopeKit in Frameworks */,
-				2BEB4AA02CEB7F87004AA068 /* DescopeKit in Frameworks */,
+				2B0A90C32D2FC58200AE854B /* DescopeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +116,6 @@
 			children = (
 				2B4347D02BDA80E700F670B2 /* app */,
 				2BA668B42BDA661B000D7F9D /* views */,
-				922D7BC22CF13B3A009EFB52 /* client */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -166,14 +159,6 @@
 			path = simpleflow;
 			sourceTree = "<group>";
 		};
-		922D7BC22CF13B3A009EFB52 /* client */ = {
-			isa = PBXGroup;
-			children = (
-				922D7BC12CF13B3A009EFB52 /* Model.swift */,
-			);
-			path = client;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,8 +166,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BA668AA2BDA62EB000D7F9D /* Build configuration list for PBXNativeTarget "Deslope" */;
 			buildPhases = (
+				2B0A90C02D2FC57400AE854B /* Frameworks */,
 				2BA6687C2BDA62E9000D7F9D /* Sources */,
-				2BA6687D2BDA62E9000D7F9D /* Frameworks */,
 				2BA6687E2BDA62E9000D7F9D /* Resources */,
 			);
 			buildRules = (
@@ -190,11 +175,6 @@
 			dependencies = (
 			);
 			name = Deslope;
-			packageProductDependencies = (
-				2BE995252C5B9F0D008228C0 /* DescopeKit */,
-				2BEB4A9F2CEB7F87004AA068 /* DescopeKit */,
-				2BEB4AAD2CECA2A8004AA068 /* DescopeKit */,
-			);
 			productName = Deslope;
 			productReference = 2BA668802BDA62E9000D7F9D /* Deslope.app */;
 			productType = "com.apple.product-type.application";
@@ -224,7 +204,7 @@
 			);
 			mainGroup = 2BA668772BDA62E9000D7F9D;
 			packageReferences = (
-				2BEB4AAC2CECA2A8004AA068 /* XCLocalSwiftPackageReference "../swift-sdk" */,
+				2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "swift-sdk" */,
 			);
 			productRefGroup = 2BA668812BDA62E9000D7F9D /* Products */;
 			projectDirPath = "";
@@ -260,7 +240,6 @@
 				2B4347CE2BDA6F9800F670B2 /* EnchantedLinkController.swift in Sources */,
 				2BEB4AB32CECB4E0004AA068 /* ModalFlowController.swift in Sources */,
 				2BEB4AAB2CEB9D8E004AA068 /* AppInterface.swift in Sources */,
-				922D7BC42CF13B3A009EFB52 /* Model.swift in Sources */,
 				2B4347D42BDA9FB000F670B2 /* HomeViewController.swift in Sources */,
 				2BE9952A2C5B9FB3008228C0 /* InlineFlowController.swift in Sources */,
 				2BEB4AB82CECC1A5004AA068 /* SimpleFlowController.swift in Sources */,
@@ -496,24 +475,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		2BEB4AAC2CECA2A8004AA068 /* XCLocalSwiftPackageReference "../swift-sdk" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../swift-sdk";
+/* Begin XCRemoteSwiftPackageReference section */
+		2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/descope/swift-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 0.9.11;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2BE995252C5B9F0D008228C0 /* DescopeKit */ = {
+		2B0A90C22D2FC58200AE854B /* DescopeKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DescopeKit;
-		};
-		2BEB4A9F2CEB7F87004AA068 /* DescopeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DescopeKit;
-		};
-		2BEB4AAD2CECA2A8004AA068 /* DescopeKit */ = {
-			isa = XCSwiftPackageProductDependency;
+			package = 2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "swift-sdk" */;
 			productName = DescopeKit;
 		};
 /* End XCSwiftPackageProductDependency section */
