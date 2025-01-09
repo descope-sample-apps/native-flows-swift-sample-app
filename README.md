@@ -38,6 +38,8 @@ let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.proj
 
 5. Run the simulator within Xcode - The play button located in the top left
 
+7. Change the value of the `appInterface` value in `AppInterface.swift` to see other examples of authentication screens
+
 ### Notes:
 
 1. Enchanted link currently does not route back to the application. You will need to validate the token externally from a web or backend client.

@@ -39,6 +39,6 @@ class HomeViewController: UIViewController {
     }
 
     func showAuth() {
-        AppInterface.transitionToAuthScreen(from: view.window!.rootViewController!)
+        AppInterface.transitionToAuthScreen(from: self)
     }
 }

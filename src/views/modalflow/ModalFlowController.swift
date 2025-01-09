@@ -1,3 +1,4 @@
+
 import UIKit
 import DescopeKit
 
@@ -16,7 +17,8 @@ class ModalFlowController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // start the flow immediately when the controller is created
+        // start the flow immediately when the controller is created so that ideally the user
+        // won't experience any loading times or layout updates when the flow is shown
         startFlow()
     }
 
@@ -27,7 +29,7 @@ class ModalFlowController: UIViewController {
 
         switch flowViewController.state {
         case .initial, .failed:
-            // the flow hasn't be started or needs to be restarted after failure
+            // the flow hasn't been started or needs to be restarted
             shouldShowFlow = true
             startFlow()
             showLoadingStarted()
@@ -138,37 +140,49 @@ extension ModalFlowController: DescopeFlowViewControllerDelegate {
     }
     
     func flowViewControllerDidCancel(_ controller: DescopeFlowViewController) {
+        print("Authentication cancelled")
+
         // since the DescopeFlowViewController is at the root of its own navigation controller
         // stack it'll show a Cancel button as the left bar button.
-        print("Authentication cancelled")
         controller.dismiss(animated: true)
+
+        // make sure the user gets a new flow if they press the Sign In button again, rather than
+        // the same DescopeFlowViewController instance that the user cancelled
         resetFlow()
     }
     
     func flowViewControllerDidFail(_ controller: DescopeFlowViewController, error: DescopeError) {
-        // it's important to pay attention that because we're preloading the flow, this delegate
-        // function might be called BEFORE the DescopeFlowViewController is presented, most likely
-        // due to a network error, and the implementation should be careful to work properly in
-        // every case. In this example we dismiss the controller itself, which will do nothing
-        // if it hasn't actually been presented yet.
         print("Authentication failed: \(error)")
-        controller.dismiss(animated: true) // might not actually do anything, controller might not be presented
+
+        // it's important to note that because we're preloading the flow, this delegate function
+        // might be called BEFORE the DescopeFlowViewController is presented, most likely due
+        // to a network error, and the implementation should be careful to work properly in
+        // every case. In this example we dismiss the controller itself, which will do
+        // nothing if it hasn't actually been presented yet.
+        controller.dismiss(animated: true)
+
+        // make sure the user gets a new flow if they press the Sign In button again, rather than
+        // the same DescopeFlowViewController instance that already failed
         resetFlow()
 
         // since the error might have happened before the flow was ready to be presented, we need
         // to reset the loading indicator to ensure the user can press the Sign In button again
         showLoadingFinished()
 
-        // errors will usually be .networkError or .flowFailed
+        // errors will usually be DescopeError.networkError or DescopeError.flowFailed
         showError(error)
     }
     
     func flowViewControllerDidFinish(_ controller: DescopeFlowViewController, response: AuthenticationResponse) {
-        // authentication succeeded so we create a new DescopeSession, give it to the session
-        // manager, and transition to the user to the home screen
         print("Authentication finished")
+
+        // authentication succeeded so we can create a new DescopeSession and set it on the
+        // session manager, which is effectively what we consider as the user being signed in
+        // to the application
         let session = DescopeSession(from: response)
         Descope.sessionManager.manageSession(session)
+
+        // finally, transition the user to the home screen
         showHome()
     }
 }
@@ -176,6 +190,9 @@ extension ModalFlowController: DescopeFlowViewControllerDelegate {
 extension ModalFlowController: UIAdaptivePresentationControllerDelegate {
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         print("Authentication cancelled interactively")
+
+        // same handling as the cancellation above, in this case the user has already dismissed
+        // the flow view controller by swiping it down, so we only need to do the reset
         resetFlow()
     }
 }

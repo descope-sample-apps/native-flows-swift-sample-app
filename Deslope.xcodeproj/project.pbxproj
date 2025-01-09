@@ -412,7 +412,7 @@
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				myBaseURL = "https://api.descope.com";
-				myProjectId = "<Your-Project-Id>";
+				myProjectId = P2p5GqW3w7dboEMRjB3em3QHFeoA;
 			};
 			name = Debug;
 		};
@@ -448,7 +448,7 @@
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				myBaseURL = "https://api.descope.com";
-				myProjectId = "<Your-Project-Id>";
+				myProjectId = P2p5GqW3w7dboEMRjB3em3QHFeoA;
 			};
 			name = Release;
 		};
