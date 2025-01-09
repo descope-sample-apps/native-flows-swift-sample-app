@@ -3,9 +3,6 @@ import UIKit
 import DescopeKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet var checkinValue: UILabel!
-    @IBOutlet var checkinButton: UIButton!
-    @IBOutlet var checkinActivityIndicator: UIActivityIndicatorView!
 
     // Lifecycle
 
@@ -24,7 +21,6 @@ class HomeViewController: UIViewController {
     }
 
     // Operations
-
 
     func clearSession() {
         guard let session = Descope.sessionManager.session else { return }
