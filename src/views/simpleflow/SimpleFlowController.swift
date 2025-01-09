@@ -1,3 +1,4 @@
+
 import UIKit
 import DescopeKit
 
@@ -13,8 +14,7 @@ class SimpleFlowController: UIViewController {
     /// it onto the navigation controller stack
     func showFlow() {
         // create a new flow object
-        let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")!
-        let flow = DescopeFlow(url: url)
+        let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 
         // create a new DescopeFlowViewController and start loading the flow
         let flowViewController = DescopeFlowViewController()
@@ -55,23 +55,28 @@ extension SimpleFlowController: DescopeFlowViewControllerDelegate {
     }
     
     func flowViewControllerDidCancel(_ controller: DescopeFlowViewController) {
-        // in this example the cancel button isn't shown because the DescopeFlowViewController
-        // isn't at the root of its navigation controller stack, and the user can simply
-        // tap the built-in Back button to leave the flow screen
+        // in this example the cancel button isn't shown and this function can't be called,
+        // because the DescopeFlowViewController isn't at the root of its navigation controller
+        // stack, and the user gets the default Back button to leave the flow screen
     }
     
     func flowViewControllerDidFail(_ controller: DescopeFlowViewController, error: DescopeError) {
-        // errors will usually be .networkError or .flowFailed
         print("Authentication failed: \(error)")
+        
+        // errors will usually be DescopeError.networkError or DescopeError.flowFailed
         showError(error)
     }
     
     func flowViewControllerDidFinish(_ controller: DescopeFlowViewController, response: AuthenticationResponse) {
-        // authentication succeeded so we create a new DescopeSession, give it to the session
-        // manager, and transition to the user to the home screen
         print("Authentication finished")
+
+        // authentication succeeded so we can create a new DescopeSession and set it on the
+        // session manager, which is effectively what we consider as the user being signed in
+        // to the application
         let session = DescopeSession(from: response)
         Descope.sessionManager.manageSession(session)
+        
+        // finally, transition the user to the home screen
         showHome()
     }
 }

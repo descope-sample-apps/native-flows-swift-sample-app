@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Deslope" customModuleProvider="target">
             <connections>
-                <outlet property="checkinActivityIndicator" destination="AR6-Nl-AW5" id="lxd-Lj-8Q5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,37 +22,31 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SlopeBg" translatesAutoresizingMaskIntoConstraints="NO" id="L3c-Si-1H5">
                     <rect key="frame" x="-380" y="90" width="873" height="1278"/>
                 </imageView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kw-Wg-x4l">
-                    <rect key="frame" x="48" y="381" width="297" height="91"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kw-Wg-x4l">
+                    <rect key="frame" x="48" y="393" width="297" height="91"/>
                     <subviews>
-                        <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="AR6-Nl-AW5">
-                            <rect key="frame" x="138.66666666666666" y="157.33333333333337" width="20" height="20"/>
-                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </activityIndicatorView>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Edy-kl-kUG" userLabel="Checkin">
-                            <rect key="frame" x="0.0" y="29" width="297" height="33"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edy-kl-kUG" userLabel="Checkin">
+                            <rect key="frame" x="0.0" y="0.0" width="297" height="91"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You're Logged In!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6w-Eb-WNH" userLabel="Checkin Label">
-                                    <rect key="frame" x="58" y="0.0" width="181" height="25"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're Logged In!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6w-Eb-WNH" userLabel="Checkin Label">
+                                    <rect key="frame" x="74.666666666666671" y="33" width="147.66666666666663" height="25"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                     <color key="textColor" white="0.0" alpha="0.81999999999999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="Y6w-Eb-WNH" firstAttribute="top" secondItem="Edy-kl-kUG" secondAttribute="top" constant="8" id="0kJ-Sw-q2v"/>
-                                <constraint firstItem="Y6w-Eb-WNH" firstAttribute="leading" secondItem="Edy-kl-kUG" secondAttribute="leading" constant="58" id="0ty-Gc-QjE"/>
-                                <constraint firstAttribute="trailing" secondItem="Y6w-Eb-WNH" secondAttribute="trailing" constant="58" id="lHr-rN-d7S"/>
+                                <constraint firstItem="Y6w-Eb-WNH" firstAttribute="centerY" secondItem="Edy-kl-kUG" secondAttribute="centerY" id="Hrd-As-NgW"/>
+                                <constraint firstItem="Y6w-Eb-WNH" firstAttribute="centerX" secondItem="Edy-kl-kUG" secondAttribute="centerX" id="n7d-7F-Bhj"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Edy-kl-kUG" firstAttribute="leading" secondItem="5kw-Wg-x4l" secondAttribute="leading" id="9Xs-DM-Bed"/>
-                        <constraint firstItem="Edy-kl-kUG" firstAttribute="top" secondItem="5kw-Wg-x4l" secondAttribute="top" constant="24" id="HfZ-va-CIy"/>
-                        <constraint firstAttribute="bottom" secondItem="Edy-kl-kUG" secondAttribute="bottom" constant="-20.333333333333314" id="aGA-WM-lve"/>
-                        <constraint firstItem="AR6-Nl-AW5" firstAttribute="top" secondItem="Edy-kl-kUG" secondAttribute="bottom" constant="46" id="fYA-Vo-yMc"/>
-                        <constraint firstItem="Edy-kl-kUG" firstAttribute="centerX" secondItem="AR6-Nl-AW5" secondAttribute="centerX" id="gPf-52-OAN"/>
+                        <constraint firstAttribute="height" constant="91" id="Ddm-DY-dGG"/>
+                        <constraint firstItem="Edy-kl-kUG" firstAttribute="top" secondItem="5kw-Wg-x4l" secondAttribute="top" id="HfZ-va-CIy"/>
+                        <constraint firstAttribute="bottom" secondItem="Edy-kl-kUG" secondAttribute="bottom" id="aGA-WM-lve"/>
                         <constraint firstAttribute="trailing" secondItem="Edy-kl-kUG" secondAttribute="trailing" id="wcN-yy-N0e"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -68,13 +61,12 @@
             <color key="backgroundColor" name="SkyColor"/>
             <constraints>
                 <constraint firstItem="PKI-CO-jkU" firstAttribute="top" secondItem="L3c-Si-1H5" secondAttribute="bottom" constant="-550" id="B7F-5F-6l9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5kw-Wg-x4l" secondAttribute="trailing" constant="48" id="DTb-Cf-QFo"/>
-                <constraint firstItem="5kw-Wg-x4l" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="16" id="Ij2-0j-Yd3"/>
-                <constraint firstItem="5kw-Wg-x4l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="Maa-bg-RqS"/>
+                <constraint firstItem="5kw-Wg-x4l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="BlQ-ZT-q9N"/>
                 <constraint firstItem="L3c-Si-1H5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1.5" id="NWd-XL-3xR"/>
                 <constraint firstAttribute="trailing" secondItem="L3c-Si-1H5" secondAttribute="trailing" constant="-100" id="U1V-ch-I8h"/>
-                <constraint firstItem="5kw-Wg-x4l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="350" id="c4g-rH-Hr7"/>
+                <constraint firstItem="5kw-Wg-x4l" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="WI0-Ez-QEN"/>
                 <constraint firstItem="L3c-Si-1H5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-380" id="oCC-ki-ul8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5kw-Wg-x4l" secondAttribute="trailing" constant="48" id="ug0-gm-sUf"/>
             </constraints>
             <point key="canvasLocation" x="20.610687022900763" y="19.718309859154932"/>
         </view>

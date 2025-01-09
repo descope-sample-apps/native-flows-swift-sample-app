@@ -1,3 +1,4 @@
+
 import UIKit
 import DescopeKit
 
@@ -6,13 +7,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // initialize the Descope SDK before using it
+        // we fetch the required Descope config values from the project settings, but you
+        // can pass constant String values to the `Descope.setup` call as well
         let localProjectId = Bundle.main.infoDictionary!["myProjectId"] as! String
         let localBaseURL = Bundle.main.infoDictionary!["myBaseURL"] as! String
-        Descope.config = DescopeConfig(projectId: localProjectId, baseURL: localBaseURL)
-        
-        Descope.setup(projectId: localProjectId) {
-            $0.logger = DescopeLogger()
+
+        // initialize the Descope SDK before using it
+        Descope.setup(projectId: localProjectId) { config in
+            config.baseURL = localBaseURL
+            config.logger = DescopeLogger()
         }
 
         // show home screen if user is already logged in, otherwise show authentication screen
@@ -34,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // pass any incoming Universal Links to the current flow in case we're
         // using Magic Link authentication in the flows
         guard userActivity.activityType == NSUserActivityTypeBrowsingWeb, let url = userActivity.webpageURL else { return false }
-        DescopeFlow.current?.resume(with: url)
-        return true
+        let handled = Descope.handleURL(url)
+        return handled
     }
 }

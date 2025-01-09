@@ -3,7 +3,7 @@ import UIKit
 
 /// Which authentication screen to show when the app runs
 @MainActor
-var appInterface = AppInterface.inlineFlow
+var appInterface = AppInterface.modalFlow
 
 /// The kinds of authentication screens supported by the app
 @MainActor
@@ -77,3 +77,4 @@ extension AppInterface {
         }
     }
 }
+

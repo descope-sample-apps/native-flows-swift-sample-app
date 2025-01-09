@@ -1,3 +1,4 @@
+
 import UIKit
 import DescopeKit
 
@@ -51,8 +52,19 @@ class InlineFlowController: UIViewController {
     // Flow
 
     func startFlow() {
-        let url = URL(string: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")!
-        let flow = DescopeFlow(url: url)
+        // create a new flow object
+        let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+
+        // since we're presenting the flow inline in our view hierarchy we use a flow hook to
+        // override the page background to be transparent and hide the scroll bars
+        flow.hooks = [
+            .setTransparentBody,
+            .setupScrollView({ scrollView in
+                scrollView.showsVerticalScrollIndicator = false
+            })
+        ]
+
+        // start loading the flow
         flowView.delegate = self
         flowView.start(flow: flow)
     }
@@ -157,7 +169,7 @@ extension InlineFlowController: DescopeFlowViewDelegate {
         UIApplication.shared.open(url)
     }
 
-    func flowViewDidFailAuthentication(_ flowView: DescopeFlowView, error: DescopeError) {
+    func flowViewDidFail(_ flowView: DescopeFlowView, error: DescopeError) {
         // it's important to pay attention that because we're preloading the flow, this delegate
         // function might be called BEFORE the DescopeFlowView is actually shown, most likely due
         // to a network error, and the implementation should be careful to work properly in every
@@ -174,7 +186,7 @@ extension InlineFlowController: DescopeFlowViewDelegate {
         showError(error)
     }
     
-    func flowViewDidFinishAuthentication(_ flowView: DescopeFlowView, response: AuthenticationResponse) {
+    func flowViewDidFinish(_ flowView: DescopeFlowView, response: AuthenticationResponse) {
         let session = DescopeSession(from: response)
         Descope.sessionManager.manageSession(session)
         print("Authentication finished")
