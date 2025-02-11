@@ -3,13 +3,16 @@ import UIKit
 
 /// Which authentication screen to show when the app runs
 @MainActor
-var appInterface = AppInterface.modalFlow
+var appInterface = AppInterface.passkeys
 
 /// The kinds of authentication screens supported by the app
 @MainActor
 enum AppInterface {
     /// Display a native authentication view for doing enchanted link with email
     case enchantedLink
+
+    /// Display a native authentication view for using passkeys
+    case passkeys
 
     /// A very simple example of authentication with flows by pushing a
     /// DescopeFlowViewController onto a UINavigationController stack
@@ -33,6 +36,7 @@ extension AppInterface {
         let vc: UIViewController
         switch appInterface {
         case .enchantedLink: vc = EnchantedLinkController()
+        case .passkeys: vc = PasskeysController()
         case .simpleFlow: vc = SimpleFlowController()
         case .modalFlow: vc = ModalFlowController()
         case .inlineFlow: vc = InlineFlowController()

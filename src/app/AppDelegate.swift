@@ -9,8 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // we fetch the required Descope config values from the project settings, but you
         // can pass constant String values to the `Descope.setup` call as well
-        let localProjectId = Bundle.main.infoDictionary!["myProjectId"] as! String
-        let localBaseURL = Bundle.main.infoDictionary!["myBaseURL"] as! String
+        let localProjectId = Bundle.main.infoDictionary?["myProjectId"] as! String
+        let localBaseURL = Bundle.main.infoDictionary?["myBaseURL"] as! String
 
         // initialize the Descope SDK before using it
         Descope.setup(projectId: localProjectId) { config in
