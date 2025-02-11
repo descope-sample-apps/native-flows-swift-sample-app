@@ -12,6 +12,8 @@
 		2B4347CF2BDA6F9800F670B2 /* EnchantedLinkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4347CD2BDA6F9800F670B2 /* EnchantedLinkController.xib */; };
 		2B4347D42BDA9FB000F670B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4347D22BDA9FB000F670B2 /* HomeViewController.swift */; };
 		2B4347D52BDA9FB000F670B2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4347D32BDA9FB000F670B2 /* HomeViewController.xib */; };
+		2B8040D92D5B939C00ED40DA /* PasskeysController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8040D72D5B939C00ED40DA /* PasskeysController.xib */; };
+		2B8040DA2D5B939C00ED40DA /* PasskeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8040D62D5B939C00ED40DA /* PasskeysController.swift */; };
 		2BA668842BDA62E9000D7F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA668832BDA62E9000D7F9D /* AppDelegate.swift */; };
 		2BA6688D2BDA62EA000D7F9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA6688C2BDA62EA000D7F9D /* Assets.xcassets */; };
 		2BA668902BDA62EA000D7F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA6688E2BDA62EA000D7F9D /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 		2B4347CD2BDA6F9800F670B2 /* EnchantedLinkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnchantedLinkController.xib; sourceTree = "<group>"; };
 		2B4347D22BDA9FB000F670B2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2B4347D32BDA9FB000F670B2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		2B8040D62D5B939C00ED40DA /* PasskeysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeysController.swift; sourceTree = "<group>"; };
+		2B8040D72D5B939C00ED40DA /* PasskeysController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasskeysController.xib; sourceTree = "<group>"; };
 		2BA668802BDA62E9000D7F9D /* Deslope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deslope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA668832BDA62E9000D7F9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA6688C2BDA62EA000D7F9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 			path = home;
 			sourceTree = "<group>";
 		};
+		2B8040D82D5B939C00ED40DA /* passkeys */ = {
+			isa = PBXGroup;
+			children = (
+				2B8040D62D5B939C00ED40DA /* PasskeysController.swift */,
+				2B8040D72D5B939C00ED40DA /* PasskeysController.xib */,
+			);
+			path = passkeys;
+			sourceTree = "<group>";
+		};
 		2BA668772BDA62E9000D7F9D = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4347CB2BDA6F8400F670B2 /* enchantedlink */,
+				2B8040D82D5B939C00ED40DA /* passkeys */,
 				2BEB4AB42CECC18B004AA068 /* simpleflow */,
 				2BEB4AAF2CECB4CE004AA068 /* modalflow */,
 				2BE995272C5B9FB3008228C0 /* inlineflow */,
@@ -226,6 +240,7 @@
 				2BEB4AB22CECB4E0004AA068 /* ModalFlowController.xib in Resources */,
 				2BE9952B2C5B9FB3008228C0 /* InlineFlowController.xib in Resources */,
 				2BA668902BDA62EA000D7F9D /* LaunchScreen.storyboard in Resources */,
+				2B8040D92D5B939C00ED40DA /* PasskeysController.xib in Resources */,
 				2BA6688D2BDA62EA000D7F9D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +254,7 @@
 			files = (
 				2B4347CE2BDA6F9800F670B2 /* EnchantedLinkController.swift in Sources */,
 				2BEB4AB32CECB4E0004AA068 /* ModalFlowController.swift in Sources */,
+				2B8040DA2D5B939C00ED40DA /* PasskeysController.swift in Sources */,
 				2BEB4AAB2CEB9D8E004AA068 /* AppInterface.swift in Sources */,
 				2B4347D42BDA9FB000F670B2 /* HomeViewController.swift in Sources */,
 				2BE9952A2C5B9FB3008228C0 /* InlineFlowController.swift in Sources */,
@@ -394,8 +410,8 @@
 				INFOPLIST_FILE = res/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,8 +446,8 @@
 				INFOPLIST_FILE = res/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -481,7 +497,7 @@
 			repositoryURL = "https://github.com/descope/swift-sdk";
 			requirement = {
 				kind = exactVersion;
-				version = 0.9.11;
+				version = 0.9.12;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

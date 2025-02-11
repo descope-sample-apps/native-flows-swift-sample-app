@@ -23,20 +23,21 @@ class HomeViewController: UIViewController {
     // Operations
 
     func clearSession() {
+        // keep the session value before clearing it
         guard let session = Descope.sessionManager.session else { return }
+
+        // clear the session from the manager, this effectively means the user
+        // is logged out from the app
         Descope.sessionManager.clearSession()
+
+        // we send a fire and forget asynchronous request to the Descope API to
+        // revoke the session as it's not needed anymore
         Task {
             try? await Descope.auth.revokeSessions(.currentSession, refreshJwt: session.refreshJwt)
         }
     }
 
     // Views
-
-    func showError(_ error: Error) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        present(alert, animated: true)
-    }
 
     func showAuth() {
         AppInterface.transitionToAuthScreen(from: self)
