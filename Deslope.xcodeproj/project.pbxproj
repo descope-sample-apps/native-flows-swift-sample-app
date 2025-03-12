@@ -218,7 +218,7 @@
 			);
 			mainGroup = 2BA668772BDA62E9000D7F9D;
 			packageReferences = (
-				2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "swift-sdk" */,
+				2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "descope-swift" */,
 			);
 			productRefGroup = 2BA668812BDA62E9000D7F9D /* Products */;
 			projectDirPath = "";
@@ -492,9 +492,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "swift-sdk" */ = {
+		2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "descope-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/descope/swift-sdk";
+			repositoryURL = "https://github.com/descope/descope-swift";
 			requirement = {
 				kind = exactVersion;
 				version = 0.9.12;
@@ -505,7 +505,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		2B0A90C22D2FC58200AE854B /* DescopeKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "swift-sdk" */;
+			package = 2B0A90C12D2FC58200AE854B /* XCRemoteSwiftPackageReference "descope-swift" */;
 			productName = DescopeKit;
 		};
 /* End XCSwiftPackageProductDependency section */
