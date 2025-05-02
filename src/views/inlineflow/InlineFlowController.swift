@@ -53,7 +53,7 @@ class InlineFlowController: UIViewController {
 
     func startFlow() {
         // create a new flow object
-        let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+        let flow = DescopeFlow(url: "https://\(Descope.config.baseURL)/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 
         // since we're presenting the flow inline in our view hierarchy we use a flow hook to
         // override the page background to be transparent and hide the scroll bars

@@ -49,7 +49,7 @@ class ModalFlowController: UIViewController {
 
     func startFlow() {
         // create a new flow object
-        let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+        let flow = DescopeFlow(url: "https://\(Descope.config.baseURL)/login/\(Descope.config.projectId)?flow=sign-up-or-in")
         
         // we present the flow full screen so we use a flow hook to disable scrolling
         flow.hooks = [

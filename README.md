@@ -7,20 +7,25 @@
 Welcome to Descope's Native Flows Swift Sample App, a demonstration of how to integrate Descope native flows for user authentication within a Swift application. By exploring this project, you can understand how Descope works with Swift to manage native flows. For an example with all authentication methods, refer to the [Swift Sample App](https://github.com/descope-sample-apps/swift-sample-app).
 
 ## Features
+
 This sample app includes:
 
 - **App Client**: An example of how the client communicates with Descope.
 
 ## Getting Started
+
 Follow these steps to run the sample app and explore Descope's capabilities with Swift:
 
 ### Prerequisites
+
 Make sure you have the following installed:
 
 - XCode
 - an IOS Simulator
 
 ### Run the app
+
+> You will need to set up a [custom domain](https://docs.descope.com/how-to-deploy-to-production/custom-domain) with CNAME to use Passkeys with this project.
 
 1. Clone this repo
 2. Open the project within Xcode
@@ -31,14 +36,14 @@ Make sure you have the following installed:
 4. **(Optional) Self-Host Your Flow**: Your Descope authentication flow is automatically hosted by Descope at `https://auth.descope.io/<your_descope_project_id>` but you can use your own website or domain to host your flow. You can modify the value for the flow URL in the Flow Controller files to include your own hosted page with our Descope Web Component, as well as alter the `?flow=sign-up-or-in` parameter to run a different flow.
 
 ```swift
-let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+let flow = DescopeFlow(url: "https://\(Descope.config.baseURL)/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 ```
 
 > For more information about Auth Hosting, visit our docs on it [here](https://docs.descope.com/auth-hosting-app)
 
 5. Run the simulator within Xcode - The play button located in the top left
 
-7. Change the value of the `appInterface` value in `AppInterface.swift` to see other examples of authentication screens
+6. Change the value of the `appInterface` value in `AppInterface.swift` to see other examples of authentication screens
 
 ### Notes:
 
@@ -48,10 +53,13 @@ let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.proj
 - https://docs.descope.com/build/guides/backend_sdks/enchanted-link/#user-verification
 
 ## Learn More
+
 To learn more please see the [Descope Documentation and API reference page](https://docs.descope.com/).
 
 ## Contact Us
+
 If you need help you can [contact us](https://docs.descope.com/support/)
 
 ## License
+
 Descope's Native Flows Swift Sample App is licensed for use under the terms and conditions of the MIT license Agreement.
