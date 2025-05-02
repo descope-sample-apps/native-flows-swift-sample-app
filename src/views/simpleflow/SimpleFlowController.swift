@@ -14,7 +14,7 @@ class SimpleFlowController: UIViewController {
     /// it onto the navigation controller stack
     func showFlow() {
         // create a new flow object
-        let flow = DescopeFlow(url: "https://api.descope.com/login/\(Descope.config.projectId)?flow=sign-up-or-in")
+        let flow = DescopeFlow(url: "https://\(Descope.config.baseURL)/login/\(Descope.config.projectId)?flow=sign-up-or-in")
 
         // create a new DescopeFlowViewController and start loading the flow
         let flowViewController = DescopeFlowViewController()
