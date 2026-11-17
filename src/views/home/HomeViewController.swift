@@ -10,6 +10,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         print("Showing checkin screen")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(didPressSignOut))
+        PushEnrollment.enrollIfSignedIn()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        CIBAController.presentPendingRequest()
     }
 
     // Actions

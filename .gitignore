@@ -4,3 +4,6 @@
 build/*
 *.xcworkspace
 xcuserdata
+# APNs keys stay out of the repo
+*.p8
+*.pem
